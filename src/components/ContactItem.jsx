@@ -1,4 +1,6 @@
 import React from "react";
+import styles from "./ContactItem.module.css";
+import { FaPhoneAlt, FaRegEnvelope, FaRegTrashAlt } from "react-icons/fa";
 
 function ContactItem({
   data: { id, name, lastName, email, phone },
@@ -6,17 +8,25 @@ function ContactItem({
 }) {
   return (
     <div>
-      <li key={id}>
+      <li className={styles.item}>
         <p>
           {name} {lastName}
         </p>
         <p>
-          <span>✉ {email}</span>
+          <span>
+            <FaRegEnvelope />
+          </span>
+          {email}
         </p>
         <p>
-          <span>📞</span> {phone}
+          <span>
+            <FaPhoneAlt />
+          </span>
+          {phone}
         </p>
-        <button onClick={() => deleteHandler(id)}>🗑</button>
+        <button onClick={() => deleteHandler(id)}>
+          <FaRegTrashAlt />
+        </button>
       </li>
     </div>
   );
