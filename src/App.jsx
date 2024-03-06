@@ -1,8 +1,12 @@
+import Header from "./components/Header";
+import Contacts from "./components/Contacts";
+
 function App() {
   return (
-    <div>
-      <h1>Contact App</h1>
-    </div>
+    <>
+      <Header />
+      <Contacts />
+    </>
   );
 }
 
